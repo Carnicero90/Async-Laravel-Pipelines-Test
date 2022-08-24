@@ -42,4 +42,11 @@ abstract class DispatchRing implements ShouldQueue
 
         return $this->obj;
     }
+
+    // tendenzialmente serve per early exit da pipe infra $this->process, magari poi si puo' pensare a un modo piu pulito di realizzarlo
+
+    public function exit()
+    {
+        $this->rings = [];
+    }
 }
